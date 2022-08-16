@@ -1,37 +1,43 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 @font-face {
     font-family: 'Norse';
     src: url('Norse-Bold.otf') format('opentype');
 }
 
-body {
-    font-family: sans-serif;
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.container, 
-.bg-img {
-    height: 100vh;
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #444;
 }
 
 .container {
-    display: flex;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: 35fr 65fr;
 }
 
+/* LEFT SIDE */
+
 .bg-img {
-    width: 40%;
     background-image: url('alexpark.jpg');
     background-size: cover;
 
     position: relative;
 }
 
-.logo {
+/* LEFT SIDE >>> LOGO */
+
+.logo-box {
     font-family: 'Norse';
     background-color: rgba(53, 33, 120, .3);
     padding: 12px 0;
@@ -43,19 +49,20 @@ body {
     gap: 12px;
     
     position: absolute;
-    top: 20%;
+    top: 153px;
 }
 
 img {
-    width: 20%;
-    height: calc(30% * 9 / 16);
+    width: 15%;
+    height: calc(15% * 9 / 16);
 }
 
 img + span {
     font-size: 60px;
     color: #fff;
-    font-weight: 400;
 }
+
+/* LEFT SIDE >>> CREDIT */
 
 .credit,
 .credit a:link,
@@ -70,4 +77,134 @@ img + span {
 
     font-size: 12px;
     font-weight: 400;
+}
+
+/* RIGHT SIDE */
+
+.title,
+.fields,
+.submit {
+    padding: 48px 36px;
+}
+
+.title,
+.submit {
+    background-color: rgba(53, 33, 120, 0.03);
+}
+
+/* RIGHT SIDE >>> TITLE */
+
+.title {
+    /* height: Calculated with JS */
+    padding-top: 84px;
+}
+
+.title > p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.title > p:first-child {
+    margin-bottom: 24px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* RIGHT SIDE >>> FORM */
+
+/* RIGHT SIDE >>> FORM >>> FIELDS SECTION */
+
+.fields {
+    box-shadow: 0 2px 3px 3px rgba(53, 33, 120, .1);
+    padding-bottom: 36px;
+}
+
+h2 {
+    margin-bottom: 24px;
+}
+
+ul {
+    list-style-type: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 12px;
+    column-gap: 96px;
+}
+
+ul > li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+li > label {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+label + input {
+    width: 80%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: .5px solid rgba(53, 33, 120, .2);
+    outline: none;
+}
+
+[type]:focus {
+    border: 1px solid rgb(53, 33, 120);
+}
+
+ul + span {
+    font-size: 12px;
+    color:rgb(200, 33, 33);
+    
+    position: relative;
+    left: calc(354px + 96px);
+}
+
+
+/* RIGHT SIDE >>> FORM >>> SUBMIT SECTION */
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+button {
+    padding: 12px 24px;
+    width: 30%;
+    border-radius: 6px;
+    border: none;
+    background-color: rgba(53, 33, 120);
+    color: #fff;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button + p {
+    font-size: 18px;
+}
+
+button + p > a:link {
+    text-decoration: none;
+    font-weight: 700;
+    color: rgba(53, 33, 120);
+}
+
+
+/* HELPER CLASSES */
+.hidden {
+    opacity: 0;
+}
+
+.red-border {
+    border-color: rgb(200, 33, 33) !important;
 }
