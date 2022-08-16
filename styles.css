@@ -108,6 +108,13 @@ img + span {
     margin-bottom: 24px;
 }
 
+.odin {
+    background-image: linear-gradient(to bottom,  rgb(199, 83, 122), rgb(53, 33, 120));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 .italic {
     font-style: italic;
 }
